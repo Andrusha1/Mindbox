@@ -18,4 +18,3 @@ public class CalculateAreas
         return Math.Round(result, 2); //Возвращение результата с округлением до 2-х знаков после запятой
     }
 }
-

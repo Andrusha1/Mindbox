@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.ComponentModel;
 using System.Security.Cryptography;
 
 namespace Mindbox.Tests
@@ -71,7 +72,7 @@ namespace Mindbox.Tests
         }
 
         [TestMethod]
-        public void CalculateArea_15and14and16_0return()
+        public void CalculateArea_15and14and16_96dot56return()
         {
             //arrange
             int a = 15;
@@ -82,6 +83,53 @@ namespace Mindbox.Tests
             //act
             CalculateAreas calc = new CalculateAreas();
             double actual = calc.CalculateArea(a, b, c);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CalculateArea_20and10and12_45dot6return()
+        {
+            //arrange
+            int a = 20;
+            int b = 10;
+            int c = 12;
+            double expected = 45.6;
+
+            //act
+            CalculateAreas calc = new CalculateAreas();
+            double actual = calc.CalculateArea(a, b, c);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CalcualteArea_12_452dot39return()
+        {
+            //arrage
+            int a = 12;
+            double expected = 452.39;
+
+            //act
+            CalculateAreas calc = new CalculateAreas();
+            double actual = calc.CalculateArea(a);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void CalcualteArea_1_32dot14return()
+        {
+            //arrage
+            int a = 1;
+            double expected = 3.14;
+
+            //act
+            CalculateAreas calc = new CalculateAreas();
+            double actual = calc.CalculateArea(a);
 
             //assert
             Assert.AreEqual(expected, actual);
